@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=https://candypay.co.kr/">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            // Android detection
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            // Default to desktop if neither iOS nor Android
+            return "desktop";
+        }
+
+        function redirectBasedOnOS() {
+            var os = getMobileOperatingSystem();
+            switch(os) {
+                case "iOS":
+                    window.location.replace("https://apps.apple.com/us/app/%EC%BA%94%EB%94%94%ED%8E%98%EC%9D%B4/id6463577769");
+                    break;
+                case "Android":
+                    window.location.replace("https://play.google.com/store/apps/details?id=kr.co.candypay");
+                    break;
+                default:
+                    // This would be the fallback for other devices or if the OS can't be detected
+                    window.location.replace("https://candypay.co.kr/");
+                    break;
+            }
+        }
+
+        // Redirect as soon as the script loads
+        redirectBasedOnOS();
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a href="https://candypay.co.kr/">click here</a>.</p>
+</body>
+</html>
