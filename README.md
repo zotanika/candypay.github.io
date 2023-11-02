@@ -1,3 +1,3 @@
 # CANDYPAY Gateway
 
-Redirecting to the app store in aware of Mobile OS.
+Mobile OS aware redirecting to the app store.
